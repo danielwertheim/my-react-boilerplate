@@ -1,0 +1,9 @@
+.vscode/
+
+wwwroot/
+
+typings/**
+!typings/index.d.ts
+
+node_modules/
+**/*npm-debug.log.*
