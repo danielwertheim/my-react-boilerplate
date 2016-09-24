@@ -1,11 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 import BaseComponent from '../BaseComponent';
 import { Navbar, NavbarHeader, NavbarNav, NavbarNavLink, NavbarNavDropdown } from '../ui/Navbar';
 import { MenuItem, MenuDivider } from '../ui/DropdownMenu';
 
 export default class SiteBar extends BaseComponent {
+  componentDidMount() {
+    $(document).on('click', '.navbar-collapse.in', function (e) {
+      if ($(e.target).is('a')) {
+        $(this).collapse('hide');
+      }
+    });
+  }
+
   render() {
     let currentLocation = this.props.location.pathname;
 
